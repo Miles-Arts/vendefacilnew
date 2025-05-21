@@ -92,6 +92,18 @@ Antes de comenzar, asegúrate de tener instalados los siguientes elementos:
 
 ---
 
+## Crear Carpetas desde la Terminal Bash
+
+Puedes crear carpetas para organizar tu proyecto directamente desde la terminal Bash utilizando el comando `mkdir`. Por ejemplo:
+
+```bash
+mkdir nombre_de_la_carpeta
+```
+
+Esto creará una nueva carpeta con el nombre especificado en el directorio actual. Puedes usar este comando para estructurar tu proyecto de manera eficiente.
+
+---
+
 ## Solución de Problemas
 
 - **El entorno virtual no funciona:** Cierra y abre una nueva terminal, luego activa el entorno virtual nuevamente.
