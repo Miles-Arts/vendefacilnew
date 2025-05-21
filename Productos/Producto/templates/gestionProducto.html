@@ -5,10 +5,29 @@
 {% block body %}
 <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-
+        <h2>Gestión de Productos</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="" method="POST">
+                <div class="form-group  mb-3">
+                    <input type="text" id="txtCodigo" name="txtCodigo" class="form-control" placeholder="Código" min="6" max="6" required>
+                </div>
+                <div class="form-group mb-3">
+                    <input type="text" id="txtNombre" name="txtNombre" class="form-control" placeholder="Nombre" max="50" required>
+                </div>
+                <div class="form-group mb-3">
+                    <input type="text" id="numPeso" name="numPeso" class="form-control"  min="1" max="10" value="0" required>
+                </div>
+                 <div class="form-group mb-3">
+                    <button type="submit" class="btn btn-success w-100 btn-block text-white">Guardar</button>
+                </div>
+                </form>
+            </div>
+        </div>
     </div>
         <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
-            <div class="table-responsive">
+            <h3>Productos disponibles</h3>
+            <div class="table-responsive py-2">
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -24,7 +43,7 @@
                             <td>{{c.nombre}}</td>
                             <td>{{c.peso}}</td>
                         </tr>
-                        {% {% endfor %} %}
+                        {% endfor %}
                     </tbody>   
             </table>
     </div>
