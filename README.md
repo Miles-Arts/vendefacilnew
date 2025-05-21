@@ -124,6 +124,31 @@ El proyecto sigue el patrón de arquitectura **MTV (Modelo-Plantilla-Vista)**, q
 
 Este patrón facilita la separación de responsabilidades, mejorando la escalabilidad y el mantenimiento del proyecto.
 
+
+---
+
+## Crear Migraciones en el Proyecto
+
+Antes de aplicar las migraciones, es necesario crearlas utilizando el siguiente comando:
+
+```bash
+python manage.py makemigrations
+```
+
+Este comando genera los archivos de migración necesarios para reflejar los cambios realizados en los modelos.
+
+---
+
+## Migraciones en el Proyecto
+
+Para aplicar las migraciones y sincronizar los modelos con la base de datos, utiliza el siguiente comando en la terminal:
+
+```bash
+python manage.py migrate
+```
+
+Este comando crea las tablas necesarias en la base de datos según los modelos definidos en el proyecto.
+
 ---
 
 ## Ejemplo de Base de Datos
