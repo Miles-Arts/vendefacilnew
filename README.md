@@ -108,6 +108,83 @@ Esta arquitectura permite separar responsabilidades, facilitando el mantenimient
 
 ---
 
+## ORM (Object Relational Mapping)
+
+El proyecto utiliza un **ORM (Object Relational Mapping)** para interactuar con la base de datos de manera eficiente y simplificada. Esto permite trabajar con modelos de datos en lugar de escribir consultas SQL directamente, facilitando el desarrollo y mantenimiento del proyecto.
+
+---
+
+## Patrón de Arquitectura MTV (Modelo-Plantilla-Vista)
+
+El proyecto sigue el patrón de arquitectura **MTV (Modelo-Plantilla-Vista)**, que organiza el código en tres componentes principales:
+
+- **Modelo (Model):** Gestiona la lógica de datos y la interacción con la base de datos.
+- **Plantilla (Template):** Define la presentación de la interfaz de usuario mediante archivos HTML.
+- **Vista (View):** Controla la lógica de la aplicación y conecta los modelos con las plantillas.
+
+Este patrón facilita la separación de responsabilidades, mejorando la escalabilidad y el mantenimiento del proyecto.
+
+
+---
+
+## Crear Migraciones en el Proyecto
+
+Antes de aplicar las migraciones, es necesario crearlas utilizando el siguiente comando:
+
+```bash
+python manage.py makemigrations
+```
+
+Este comando genera los archivos de migración necesarios para reflejar los cambios realizados en los modelos.
+
+---
+
+## Migraciones en el Proyecto
+
+Para aplicar las migraciones y sincronizar los modelos con la base de datos, utiliza el siguiente comando en la terminal:
+
+```bash
+python manage.py migrate
+```
+
+Este comando crea las tablas necesarias en la base de datos según los modelos definidos en el proyecto.
+
+---
+
+## Ejemplo de Base de Datos
+
+A continuación, se presenta un ejemplo de script para la creación de tablas en PostgreSQL que se utilizarán en el proyecto:
+
+```sql
+-- Script de creación de tablas para PostgreSQL
+-- Tablas: id_personas y productos
+
+CREATE TABLE id_personas (
+    documento INT NOT NULL PRIMARY KEY,
+    nombres CHAR(250) NOT NULL,
+    apellidos CHAR(250) NOT NULL,
+    correo VARCHAR(250) NOT NULL,
+    metodo_de_pago INT NOT NULL,
+    fecha_nacimiento DATE NOT NULL,
+    direccion VARCHAR(250) NOT NULL,
+    celular VARCHAR(250) NOT NULL
+);
+
+CREATE TABLE productos (
+    id_producto INT NOT NULL PRIMARY KEY,
+    categoria_producto INT NOT NULL,
+    id_compra FLOAT NOT NULL,
+    caracteristicas_producto VARCHAR(250) NOT NULL,
+    tipo_producto INT NOT NULL,
+    tamaño_producto INT NOT NULL,
+    precio_producto FLOAT NOT NULL,
+    mes_del_producto INT NOT NULL,
+    nombre_producto VARCHAR(250) NOT NULL
+);
+```
+
+---
+
 ## Versión del Proyecto
 
 Actualmente en la versión **0.0.1** (etapa temprana de desarrollo). Se sigue el esquema de versionado semántico.
