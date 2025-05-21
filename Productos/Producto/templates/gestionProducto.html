@@ -1,16 +1,32 @@
-<!DOCTYPE html>
-<html lang=es>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <h1>Ya estamos en la página gestión de productos</h1>
-        
-        <script src="" async defer></script>
-    </body>
-</html>
+{% extends "./base.html" %}
+
+{% block title %} Productos {% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+
+    </div>
+        <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Peso</th>
+                        </tr>
+                    </thead>
+                    <tbody>     
+                        {% for c in productos %}
+                        <tr>
+                            <td>{{c.codigo}}</td>
+                            <td>{{c.nombre}}</td>
+                            <td>{{c.peso}}</td>
+                        </tr>
+                        {% {% endfor %} %}
+                    </tbody>   
+            </table>
+    </div>
+</div>
+{% endblock %}
