@@ -9,6 +9,8 @@ urlpatterns = [
     path('eliminarProducto/<codigo>', views.eliminarProducto),
     #Otras secciones
     path('contacto/', views.contacto, name='contacto'),
+    path('nosotros/', views.nosotros, name='nosotros'),
+    path('productos/', views.productos, name='productos'),
     
 ]
 
