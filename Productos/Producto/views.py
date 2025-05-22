@@ -16,3 +16,14 @@ def registrarProducto(request):
     producto=Producto.objects.create(codigo=codigo,nombre=nombre,peso=peso)
     
     return redirect('/')
+
+def edicionProducto(request,codigo):
+    producto=Producto.objects.get(codigo=codigo)
+    return render(request, "edicionProducto.html", {"producto":producto})
+    
+
+def eliminarProducto(request, codigo):
+    producto=Producto.objects.get(codigo=codigo)
+    producto.delete()
+    
+    return redirect('/')
