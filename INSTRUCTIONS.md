@@ -143,9 +143,9 @@ El proyecto sigue el esquema de versionado semántico. La versión actual es **0
 Si tienes preguntas o necesitas ayuda, contacta al autor del proyecto:
 
 - **Autor:** Milton Figueredo
-- **Correo:** [tu_correo@example.com](milton_figueredo@soy.sena.edu.co)
-- **LinkedIn:** [Perfil de LinkedIn](https://www.linkedin.com/in/milton-figueredo-miles-arts/)
-- **GitHub:** [Perfil de GitHub](https://github.com/Miles-Arts)
+- **Correo:** [milton_figueredo@soy.sena.edu.co](milton_figueredo@soy.sena.edu.co)
+- **LinkedIn:** [https://www.linkedin.com/in/milton-figueredo-miles-arts/](https://www.linkedin.com/in/milton-figueredo-miles-arts/)
+- **GitHub:** [https://github.com/Miles-Arts](https://github.com/Miles-Arts)
 
 ---
 
