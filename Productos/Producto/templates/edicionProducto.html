@@ -1,0 +1,29 @@
+{% extends "./base.html" %}
+
+{% block title %} Productos {% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Edición de Productos</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/edicionProducto/" method="POST">{% csrf_token %}
+                <div class="form-group  mb-3">
+                    <input type="text" id="txtCodigo" name="txtCodigo" value="{{producto.codigo}}" class="form-control" placeholder="Código" min="6" max="6" readonly required>
+                </div>
+                <div class="form-group mb-3">
+                    <input type="text" id="txtNombre" name="txtNombre" value="{{producto.nombre}}" class="form-control" placeholder="Nombre" max="50" required>
+                </div>
+                <div class="form-group mb-3">
+                    <input type="text" id="numPeso" name="numPeso" value="{{producto.peso}}" class="form-control"  placeholder="Peso/Litros" min="1" max="10"  required>
+                </div>
+                <div class="form-group mb-3">
+                    <button type="submit" class="btn btn-success w-100 btn-block text-white">Guardar</button>
+                </div>
+                </form>
+            </div>
+        </div>
+</div>
+</div>
+{% endblock %}

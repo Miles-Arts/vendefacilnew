@@ -8,7 +8,7 @@
         <h2>Gestión de Productos</h2>
         <div class="card">
             <div class="card-body">
-                <form action="/registrarProducto/" method="POST">{% {% csrf_token %} %}
+                <form action="/registrarProducto/" method="POST">{% csrf_token %}
                 <div class="form-group  mb-3">
                     <input type="text" id="txtCodigo" name="txtCodigo" class="form-control" placeholder="Código" min="6" max="6" required>
                 </div>
@@ -34,6 +34,7 @@
                             <th>Código</th>
                             <th>Nombre</th>
                             <th>Peso</th>
+                            <th colspan="2">Opciones</th>
                         </tr>
                     </thead>
                     <tbody>     
@@ -42,6 +43,8 @@
                             <td>{{c.codigo}}</td>
                             <td>{{c.nombre}}</td>
                             <td>{{c.peso}}</td>
+                            <td><a href="edicionProducto/{{c.codigo}}" class="btn btn-info">Editar</a></td>
+                            <td><a href="eliminarProducto/{{c.codigo}}" class="btn btn-danger">Eliminar</a></td>
                         </tr>
                         {% endfor %}
                     </tbody>   
