@@ -21,6 +21,17 @@ def edicionProducto(request,codigo):
     producto=Producto.objects.get(codigo=codigo)
     return render(request, "edicionProducto.html", {"producto":producto})
     
+def editarProducto(request):
+    codigo=request.POST['txtCodigo']
+    nombre=request.POST['txtNombre']
+    peso=request.POST['numPeso']
+    
+    producto=Producto.objects.get(codigo=codigo)
+    producto.nombre=nombre
+    producto.peso=peso
+    producto.save()
+    
+    return redirect('/')
 
 def eliminarProducto(request, codigo):
     producto=Producto.objects.get(codigo=codigo)

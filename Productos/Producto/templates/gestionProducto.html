@@ -31,6 +31,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
+                            <th>#</th>
                             <th>Código</th>
                             <th>Nombre</th>
                             <th>Peso</th>
@@ -40,6 +41,7 @@
                     <tbody>     
                         {% for c in productos %}
                         <tr>
+                            <td>{{forloop.counter}}</td>
                             <td>{{c.codigo}}</td>
                             <td>{{c.nombre}}</td>
                             <td>{{c.peso}}</td>
