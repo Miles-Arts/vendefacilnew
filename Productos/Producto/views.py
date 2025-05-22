@@ -44,3 +44,6 @@ def eliminarProducto(request, codigo):
     messages.success(request, '¡Producto Eliminado!')
     
     return redirect('/')
+
+def contacto(request):
+    return render(request, "contacto.html")
