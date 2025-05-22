@@ -200,6 +200,66 @@ CREATE TABLE productos (
 
 ---
 
+## Ejecución del Proyecto
+
+Para iniciar el servidor de desarrollo, utiliza el siguiente comando en la terminal:
+```bash
+python manage.py runserver
+```
+
+Luego, abre tu navegador y accede a la aplicación en la dirección `http://127.0.0.1:8000/`.
+
+---
+
+## Pruebas
+
+Para ejecutar las pruebas unitarias del proyecto, utiliza el siguiente comando:
+```bash
+python manage.py test
+```
+Esto ejecutará todas las pruebas definidas en la carpeta `tests.py` de cada aplicación.
+
+---
+
+## Contribución
+
+Si deseas contribuir al proyecto, sigue estos pasos:
+1. Haz un fork del repositorio.
+2. Crea una nueva rama para tu funcionalidad o corrección de errores:
+   ```bash
+   git checkout -b nombre-de-tu-rama
+   ```
+3. Realiza tus cambios y haz commits descriptivos:
+   ```bash
+   git commit -m "Descripción de tu cambio"
+   ```
+4. Sube tus cambios a tu repositorio fork:
+   ```bash
+   git push origin nombre-de-tu-rama
+   ```
+5. Abre un pull request en el repositorio original.
+
+---
+
+## Arquitectura del Proyecto
+
+El proyecto sigue la estructura estándar de Django. A continuación, se describe brevemente:
+
+- **VendeFacil/**: Contiene la configuración principal del proyecto.
+- **Productos/**: Aplicación que gestiona los productos, con subcarpetas para modelos, vistas, plantillas, y archivos estáticos.
+- **templates/**: Archivos HTML para las vistas.
+- **static/**: Archivos estáticos como CSS, JavaScript e imágenes.
+
+---
+
+## Recursos Adicionales
+
+- [Documentación oficial de Django](https://docs.djangoproject.com/)
+- [Documentación de Bootstrap](https://getbootstrap.com/)
+- [Guía de Git y GitHub](https://guides.github.com/)
+
+---
+
 ## Versión del Proyecto
 
 Actualmente en la versión **0.0.1** (etapa temprana de desarrollo). Se sigue el esquema de versionado semántico.
