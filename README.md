@@ -124,6 +124,21 @@ El proyecto sigue el patrón de arquitectura **MTV (Modelo-Plantilla-Vista)**, q
 
 Este patrón facilita la separación de responsabilidades, mejorando la escalabilidad y el mantenimiento del proyecto.
 
+---
+
+## Importar Funciones Esenciales en las Vistas
+
+En las vistas de Django, es común utilizar las funciones `render` y `redirect` para manejar la lógica de las respuestas HTTP:
+
+- **`render`**: Se utiliza para renderizar plantillas HTML y devolverlas como respuesta al navegador. Es necesario importarla desde `django.shortcuts`.
+- **`redirect`**: Se utiliza para redirigir al usuario a otra URL. También se importa desde `django.shortcuts`.
+
+### Ejemplo de Importación:
+```python
+from django.shortcuts import render, redirect
+```
+
+Estas funciones son fundamentales para manejar la interacción entre las vistas y las plantillas en un proyecto Django.
 
 ---
 

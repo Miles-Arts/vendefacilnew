@@ -8,7 +8,7 @@
         <h2>Gestión de Productos</h2>
         <div class="card">
             <div class="card-body">
-                <form action="" method="POST">
+                <form action="/registrarProducto/" method="POST">{% {% csrf_token %} %}
                 <div class="form-group  mb-3">
                     <input type="text" id="txtCodigo" name="txtCodigo" class="form-control" placeholder="Código" min="6" max="6" required>
                 </div>
@@ -16,9 +16,9 @@
                     <input type="text" id="txtNombre" name="txtNombre" class="form-control" placeholder="Nombre" max="50" required>
                 </div>
                 <div class="form-group mb-3">
-                    <input type="text" id="numPeso" name="numPeso" class="form-control"  min="1" max="10" value="0" required>
+                    <input type="text" id="numPeso" name="numPeso" class="form-control"  placeholder="Peso/Litros" min="1" max="10"  required>
                 </div>
-                 <div class="form-group mb-3">
+                <div class="form-group mb-3">
                     <button type="submit" class="btn btn-success w-100 btn-block text-white">Guardar</button>
                 </div>
                 </form>
