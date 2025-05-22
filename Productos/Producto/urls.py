@@ -6,6 +6,9 @@ urlpatterns = [
     path('registrarProducto/', views.registrarProducto),
     path('edicionProducto/<codigo>', views.edicionProducto),
     path('editarProducto/', views.editarProducto),
-    path('eliminarProducto/<codigo>', views.eliminarProducto)
+    path('eliminarProducto/<codigo>', views.eliminarProducto),
+    #Otras secciones
+    path('contacto/', views.contacto, name='contacto'),
+    
 ]
 
