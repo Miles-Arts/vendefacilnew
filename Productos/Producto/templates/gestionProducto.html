@@ -5,6 +5,14 @@
 {% block body %}
 <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong class="text-dark">{{ message }}</strong>
+        </div>
+        {% endfor %}
+        {% endif %}
         <h2>Gestión de Productos</h2>
         <div class="card">
             <div class="card-body">
@@ -31,6 +39,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
+                            <th>#</th>
                             <th>Código</th>
                             <th>Nombre</th>
                             <th>Peso</th>
@@ -40,11 +49,12 @@
                     <tbody>     
                         {% for c in productos %}
                         <tr>
+                            <td>{{forloop.counter}}</td>
                             <td>{{c.codigo}}</td>
                             <td>{{c.nombre}}</td>
                             <td>{{c.peso}}</td>
                             <td><a href="edicionProducto/{{c.codigo}}" class="btn btn-info">Editar</a></td>
-                            <td><a href="eliminarProducto/{{c.codigo}}" class="btn btn-danger">Eliminar</a></td>
+                            <td><a href="eliminarProducto/{{c.codigo}}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
                         </tr>
                         {% endfor %}
                     </tbody>   
