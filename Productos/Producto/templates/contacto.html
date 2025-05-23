@@ -1,5 +1,18 @@
 {% extends "base.html" %}
-{% block title %} Nombre de la sección {% endblock %}
+{% load static %}
+{% block title %} Contacto {% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="{% static 'css/mapa.css' %}">
+{% endblock %}
 {% block body %}
-<!-- Contenido específico de la sección -->
+    <div id="map" style="height: 418px; width: 100%; border: 1px solid black;"></div>
+<br/>
+<small>
+    <a href="https://www.openstreetmap.org/?mlat=5.68617&amp;mlon=-73.23452#map=15/5.68617/-73.23452">Mapa Completo</a>
+</small>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <!-- Tu JS -->
+    <script src="{% static 'js/mapa.js' %}"></script>
 {% endblock %}
