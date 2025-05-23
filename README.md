@@ -1,3 +1,21 @@
+## Crear y activar entorno virtual (Windows)
+
+1. Abre una terminal y navega a la ruta de tu proyecto:
+   ```bash
+   cd /p/GITHUB/PROYECTOS/VENDEFACILNEW/VendeFacil
+   ```
+
+2. Crea el entorno virtual:
+   ```bash
+   python -m venv venv
+   ```
+
+3. Activa el entorno virtual:
+   ```bash
+   source venv/Scripts/activate
+   ```
+
+Ahora puedes instalar dependencias y ejecutar tu proyecto dentro del entorno virtual.
 # Vende-Fácil
 
 Vende-Fácil es una aplicación desarrollada para facilitar la conexión entre vendedores de productos agrícolas y compradores de alimentos del campo. Su propósito principal es actuar como intermediaria digital, permitiendo la gestión eficiente de ventas, compras, productos y usuarios dentro del ecosistema agrícola.
