@@ -2,6 +2,7 @@
 <html lang=en>
     <head>
         {% load static %}
+        {% block head %}{% endblock %}
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{% block title %} {% endblock %}</title>
@@ -23,7 +24,7 @@
                 <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Productos</a>
+                <a class="nav-link" href="productos">Productos</a>
                 </li>
                 </li>
                 <li class="nav-item">
