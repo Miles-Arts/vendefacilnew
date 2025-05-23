@@ -6,6 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }).addTo(map);
 
     L.marker([5.690338844121654, -73.22773931589995 ]).addTo(map)
-        .bindPopup("<b>Tuta Boyacá</b> <br> Oficina VendeFacil app")
+        .bindPopup("<b>Tuta Boyacá</b><br> Oficina VendeFacil app ✅")
         .openPopup();
 });
