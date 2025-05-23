@@ -16,15 +16,22 @@
         <h2>Gestión de Productos</h2>
         <div class="card">
             <div class="card-body">
-                <form action="/registrarProducto/" method="POST">{% csrf_token %}
+                <form action="/registrarProducto/" method="POST" enctype="multipart/form-data">{% csrf_token %}
                 <div class="form-group  mb-3">
-                    <input type="text" id="txtCodigo" name="txtCodigo" class="form-control" placeholder="Código" min="6" max="6" required>
+                    <input type="text" id="txtCodigo" name="txtCodigo" class="form-control" placeholder="Código" min="6" max="6" required disabled value="(Automático)" />
                 </div>
                 <div class="form-group mb-3">
                     <input type="text" id="txtNombre" name="txtNombre" class="form-control" placeholder="Nombre" max="50" required>
                 </div>
                 <div class="form-group mb-3">
                     <input type="text" id="numPeso" name="numPeso" class="form-control"  placeholder="Peso/Litros" min="1" max="10"  required>
+                </div>
+                <div class="form-group mb-3">
+                    <textarea id="txtCaracteristicas" name="txtCaracteristicas" class="form-control" placeholder="Características (máx 300 caracteres)" maxlength="300" required></textarea>
+                </div>
+                <div class="form-group mb-3">
+                    <input type="file" id="foto" name="foto" class="form-control" accept="image/png, image/jpeg" required>
+                    <small class="form-text text-muted">Solo JPG o PNG. Máx 20 MB.</small>
                 </div>
                 <div class="form-group mb-3">
                     <button type="submit" class="btn btn-success w-100 btn-block text-white">Guardar</button>
@@ -43,6 +50,7 @@
                             <th>Código</th>
                             <th>Nombre</th>
                             <th>Peso</th>
+                            <th>Foto</th>
                             <th colspan="2">Opciones</th>
                         </tr>
                     </thead>
@@ -53,6 +61,13 @@
                             <td>{{c.codigo}}</td>
                             <td>{{c.nombre}}</td>
                             <td>{{c.peso}}</td>
+                            <td>
+                                {% if c.foto %}
+                                    <img src="{{ c.foto.url }}" alt="Foto" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px;" />
+                                {% else %}
+                                    <span class="text-muted">Sin foto</span>
+                                {% endif %}
+                            </td>
                             <td><a href="edicionProducto/{{c.codigo}}" class="btn btn-info">Editar</a></td>
                             <td><a href="eliminarProducto/{{c.codigo}}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
                         </tr>

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Productos Disponibles {% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/productos.css' %}">
+{% endblock %}
+{% block body %}
+<h2 class="mb-4">Productos Disponibles</h2>
+<div class="container">
+  <div class="row justify-content-center flex-row-reverse">
+    {% for producto in productos %}
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="card h-100" style="width: 18rem;">
+          {% if producto.foto %}
+            <img src="{{ producto.foto.url }}" class="card-img-top" alt="{{ producto.nombre }}" />
+          {% else %}
+            <img src="{% static 'img/maiz.jpg' %}" class="card-img-top" alt="Producto" />
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{ producto.nombre|title }}</h5>
+            <p class="card-text mb-1"><strong>Código:</strong> {{ producto.codigo }}</p>
+            <p class="card-text mb-2"><strong>Peso:</strong> {{ producto.peso }}</p>
+            <p class="card-text mb-2"><strong>Características:</strong> {{ producto.caracteristicas|truncatechars:40 }}</p>
+            <a href="#" class="btn btn-primary">Comprar</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
