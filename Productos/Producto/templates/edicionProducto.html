@@ -1,58 +1,40 @@
-{% extends "./base.html" %} {% block title %} Productos {% endblock %} {% block
-body %}
+{% extends "./base.html" %}
+{% block title %} Productos {% endblock %}
+{% block body %}
 <div class="row">
   <div class="col-md-4 offset-md-4">
     <h2>Edición de Productos</h2>
     <div class="card">
       <div class="card-body">
-        <form action="/editarProducto/" method="POST">
+        <form action="/editarProducto/" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           <div class="form-group mb-3">
-            <input
-              type="text"
-              id="txtCodigo"
-              name="txtCodigo"
-              value="{{producto.codigo}}"
-              class="form-control"
-              placeholder="Código"
-              min="6"
-              max="6"
-              readonly
-              required
-            />
+            <input type="text" id="txtCodigo" name="txtCodigo" value="{{producto.codigo}}" class="form-control" placeholder="Código" min="6" max="6" readonly required />
           </div>
           <div class="form-group mb-3">
-            <input
-              type="text"
-              id="txtNombre"
-              name="txtNombre"
-              value="{{producto.nombre}}"
-              class="form-control"
-              placeholder="Nombre"
-              max="50"
-              required
-            />
+            <input type="text" id="txtNombre" name="txtNombre" value="{{producto.nombre}}" class="form-control" placeholder="Nombre" max="50" required />
           </div>
           <div class="form-group mb-3">
-            <input
-              type="text"
-              id="numPeso"
-              name="numPeso"
-              value="{{producto.peso}}"
-              class="form-control"
-              placeholder="Peso/Litros"
-              min="1"
-              max="10"
-              required
-            />
+            <input type="text" id="numPeso" name="numPeso" value="{{producto.peso}}" class="form-control" placeholder="Peso/Litros" min="1" max="10" required />
           </div>
           <div class="form-group mb-3">
-            <button
-              type="submit"
-              class="btn btn-success w-100 btn-block text-white"
-            >
-              Guardar
-            </button>
+            <label for="txtCaracteristicas">Características</label>
+            <textarea id="txtCaracteristicas" name="txtCaracteristicas" class="form-control" maxlength="300" placeholder="Características (máx 300 caracteres)">{% if producto.caracteristicas %}{{ producto.caracteristicas }}{% endif %}</textarea>
+          </div>
+          <div class="form-group mb-3">
+            <label>Foto actual:</label><br>
+            {% if producto.foto %}
+              <img src="{{ producto.foto.url }}" alt="Foto actual" style="width: 80px; height: 80px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;" />
+            {% else %}
+              <span class="text-muted">Sin foto</span>
+            {% endif %}
+          </div>
+          <div class="form-group mb-3">
+            <label for="foto">Cambiar foto (JPG o PNG, máx 20 MB):</label>
+            <input type="file" id="foto" name="foto" class="form-control" accept="image/png, image/jpeg">
+          </div>
+          <div class="form-group mb-3">
+            <button type="submit" class="btn btn-success w-100 btn-block text-white">Guardar</button>
           </div>
         </form>
       </div>

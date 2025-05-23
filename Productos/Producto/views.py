@@ -11,12 +11,34 @@ def home(request):
     return render(request, "gestionProducto.html", {"productos":productos})
 
 def registrarProducto(request):
-    codigo=request.POST['txtCodigo']
-    nombre=request.POST['txtNombre']
-    peso=request.POST['numPeso']
-    
-    producto=Producto.objects.create(codigo=codigo,nombre=nombre,peso=peso)
-    messages.success(request, '¡Productos Registrado!')
+    if request.method != 'POST':
+        return redirect('/')
+    nombre = request.POST['txtNombre']
+    peso = request.POST['numPeso']
+    caracteristicas = request.POST['txtCaracteristicas']
+    foto = request.FILES.get('foto')
+
+    # Validaciones
+    if not foto:
+        messages.error(request, 'Debe subir una imagen.')
+        return redirect('/')
+    if foto.size > 20 * 1024 * 1024:
+        messages.error(request, 'La imagen no debe superar los 20 MB.')
+        return redirect('/')
+    if foto.content_type not in ['image/jpeg', 'image/png']:
+        messages.error(request, 'Solo se permiten imágenes JPG o PNG.')
+        return redirect('/')
+    if len(caracteristicas) > 300:
+        messages.error(request, 'Las características no pueden superar 300 caracteres.')
+        return redirect('/')
+
+    producto = Producto.objects.create(
+        nombre=nombre,
+        peso=peso,
+        caracteristicas=caracteristicas,
+        foto=foto
+    )
+    messages.success(request, '¡Producto Registrado!')
     return redirect('/')
 
 def edicionProducto(request,codigo):
@@ -24,17 +46,32 @@ def edicionProducto(request,codigo):
     return render(request, "edicionProducto.html", {"producto":producto})
     
 def editarProducto(request):
-    codigo=request.POST['txtCodigo']
-    nombre=request.POST['txtNombre']
-    peso=request.POST['numPeso']
-    
-    producto=Producto.objects.get(codigo=codigo)
-    producto.nombre=nombre
-    producto.peso=peso
+    if request.method != 'POST':
+        return redirect('/')
+    codigo = request.POST['txtCodigo']
+    nombre = request.POST['txtNombre']
+    peso = request.POST['numPeso']
+    caracteristicas = request.POST.get('txtCaracteristicas', '')
+    foto = request.FILES.get('foto')
+
+    producto = Producto.objects.get(codigo=codigo)
+    producto.nombre = nombre
+    producto.peso = peso
+    if caracteristicas:
+        if len(caracteristicas) > 300:
+            messages.error(request, 'Las características no pueden superar 300 caracteres.')
+            return redirect(f'/edicionProducto/{codigo}')
+        producto.caracteristicas = caracteristicas
+    if foto:
+        if foto.size > 20 * 1024 * 1024:
+            messages.error(request, 'La imagen no debe superar los 20 MB.')
+            return redirect(f'/edicionProducto/{codigo}')
+        if foto.content_type not in ['image/jpeg', 'image/png']:
+            messages.error(request, 'Solo se permiten imágenes JPG o PNG.')
+            return redirect(f'/edicionProducto/{codigo}')
+        producto.foto = foto
     producto.save()
-    
     messages.success(request, '¡Producto Actualizado!')
-    
     return redirect('/')
 
 def eliminarProducto(request, codigo):
@@ -53,3 +90,7 @@ def nosotros(request):
 
 def productos(request):
     return render(request, "productos.html")
+
+def disponibles(request):
+    productos = Producto.objects.all()
+    return render(request, "disponibles.html", {"productos": productos})
