@@ -1,0 +1,10 @@
+.container{
+    margin-top: 46px;
+}
+/* .card {
+    margin-right: 10px;
+} */
+
+.row .col:not(:last-child) .card {
+    margin-right: 10px;
+}
