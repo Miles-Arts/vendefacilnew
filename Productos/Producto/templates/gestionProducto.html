@@ -65,7 +65,7 @@
                             <td>{{c.peso}}</td>
                             <td>
                                 {% if c.foto %}
-                                    <img src="{{ c.foto.url }}" alt="Foto" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px;" />
+                                    <img src="{{ c.foto.url }}" alt="Foto" class="img-cuadrada" style="max-width: 40px; max-height: 40px;" />
                                 {% else %}
                                     <span class="text-muted">Sin foto</span>
                                 {% endif %}

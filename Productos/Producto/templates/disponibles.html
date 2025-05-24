@@ -20,8 +20,8 @@
             <h5 class="card-title">{{ producto.nombre|title }}</h5>
             <p class="card-text mb-1"><strong>Código:</strong> {{ producto.codigo }}</p>
             <p class="card-text mb-2"><strong>Peso:</strong> {{ producto.peso }}</p>
-            <p class="card-text mb-2"><strong>Características:</strong> {{ producto.caracteristicas|truncatechars:40 }}</p>
-            <a href="#" class="btn btn-primary">Comprar</a>
+            <p class="card-text mb-2"><strong>Características:</strong> {{ producto.caracteristicas|truncatechars:15 }}</p>
+              <a href="#" class="btn btn-primary">Comprar</a>
           </div>
         </div>
       </div>
