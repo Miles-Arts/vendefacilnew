@@ -82,6 +82,9 @@ def eliminarProducto(request, codigo):
     
     return redirect('/')
 
+def inicio(request):
+    return render(request, "inicio.html")
+
 def contacto(request):
     return render(request, "contacto.html")
 
