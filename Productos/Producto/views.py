@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from .models import Producto
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -82,8 +83,9 @@ def eliminarProducto(request, codigo):
     
     return redirect('/')
 
+@login_required
 def inicio(request):
-    return render(request, "inicio.html")
+    return render(request, "home.html")
 
 def contacto(request):
     return render(request, "contacto.html")
@@ -92,7 +94,8 @@ def nosotros(request):
     return render(request, "nosotros.html")
 
 def productos(request):
-    return render(request, "productos.html")
+    productos = Producto.objects.all()
+    return render(request, "productos.html", {"productos": productos})
 
 def disponibles(request):
     productos = Producto.objects.all()
