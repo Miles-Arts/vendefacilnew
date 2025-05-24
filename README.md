@@ -1,3 +1,46 @@
+# Vende-Fácil
+
+Vende-Fácil es una aplicación desarrollada para facilitar la conexión entre vendedores de productos agrícolas y compradores de alimentos del campo. Su propósito principal es actuar como intermediaria digital, permitiendo la gestión eficiente de ventas, compras, productos y usuarios dentro del ecosistema agrícola.
+
+---
+
+## Descripción del Proyecto
+
+Vende-Fácil maneja distintos tipos de usuarios (**clientes** y **vendedores**), así como el registro de productos con sus características específicas (tipo, tamaño, precio, disponibilidad). También permite realizar ventas y compras, y relacionarlas con los productos comercializados.
+
+> **Nota:** Este proyecto es exclusivamente para fines de aprendizaje y corresponde a un proyecto de estudios del programa Tecnólogo en Análisis y Desarrollo de Software del SENA. No debe ser utilizado en producción ni para fines comerciales.
+
+---
+
+## Índice
+
+- [Descripción del Proyecto](#descripción-del-proyecto)
+- [Crear y activar entorno virtual (Windows)](#crear-y-activar-entorno-virtual-windows)
+- [Requisitos](#requisitos)
+- [Instalación](#instalación)
+- [Configuración de Variables de Entorno](#configuración-de-variables-de-entorno)
+- [Migraciones de Base de Datos](#migraciones-de-base-de-datos)
+- [Uso](#uso)
+- [Ejecutar tests](#ejecutar-tests)
+- [Recopilar archivos estáticos](#recopilar-archivos-estáticos)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- [Sistema Operativo](#sistema-operativo)
+- [Conexión a la Base de Datos PostgreSQL](#conexión-a-la-base-de-datos-postgresql)
+- [Solución a Errores Comunes](#solución-a-errores-comunes)
+- [Metodología de Trabajo](#metodología-de-trabajo)
+- [Arquitectura del Proyecto](#arquitectura-del-proyecto)
+- [ORM (Object Relational Mapping)](#orm-object-relational-mapping)
+- [Patrón de Arquitectura MTV (Modelo-Plantilla-Vista)](#patrón-de-arquitectura-mtv-modelo-plantilla-vista)
+- [Importar Funciones Esenciales en las Vistas](#importar-funciones-esenciales-en-las-vistas)
+- [Ejemplo de Base de Datos](#ejemplo-de-base-de-datos)
+- [Contribución](#contribución)
+- [Recursos Adicionales](#recursos-adicionales)
+- [Versión del Proyecto](#versión-del-proyecto)
+- [Autor e Institución](#autor-e-institución)
+- [Licencia](#licencia)
+
+---
+
 ## Crear y activar entorno virtual (Windows)
 
 1. Abre una terminal y navega a la ruta de tu proyecto:
@@ -81,19 +124,7 @@ python manage.py collectstatic
 
 ## Licencia
 Este proyecto está licenciado bajo la [MIT License](LICENSE).
-# Vende-Fácil
 
-Vende-Fácil es una aplicación desarrollada para facilitar la conexión entre vendedores de productos agrícolas y compradores de alimentos del campo. Su propósito principal es actuar como intermediaria digital, permitiendo la gestión eficiente de ventas, compras, productos y usuarios dentro del ecosistema agrícola.
-
----
-
-## Descripción del Proyecto
-
-Vende-Fácil maneja distintos tipos de usuarios (**clientes** y **vendedores**), así como el registro de productos con sus características específicas (tipo, tamaño, precio, disponibilidad). También permite realizar ventas y compras, y relacionarlas con los productos comercializados.
-
-> **Nota:** Este proyecto es exclusivamente para fines de aprendizaje y corresponde a un proyecto de estudios del programa Tecnólogo en Análisis y Desarrollo de Software del SENA. No debe ser utilizado en producción ni para fines comerciales.
-
----
 
 ## Tecnologías Utilizadas
 
