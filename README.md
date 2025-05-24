@@ -16,6 +16,71 @@
    ```
 
 Ahora puedes instalar dependencias y ejecutar tu proyecto dentro del entorno virtual.
+
+## Requisitos
+- Python 3.8 o superior
+- pip
+
+## Instalación
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/Miles-Arts/vendefacilnew.git
+   cd vendefacilnew/VendeFacil
+   ```
+2. Crea y activa el entorno virtual (Windows PowerShell / Git Bash):
+   ```bash
+   python -m venv venv
+   source venv/Scripts/activate   # Git Bash
+   # o en PowerShell:
+   # .\venv\Scripts\Activate.ps1
+   ```
+   Con esto, puedes instalar dependencias y ejecutar tu proyecto dentro del entorno virtual.
+3. Instala las dependencias:
+   ```bash
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   ```
+
+## Configuración de Variables de Entorno
+Antes de ejecutar la aplicación, debes crear una carpeta llamada `.env` en la raíz del proyecto. Dentro de esta carpeta, crea un archivo para definir las variables de entorno necesarias para la conexión a la base de datos y la seguridad de la aplicación. Ejemplo de variables que debes agregar:
+
+```env
+SECRET_KEY=tu_clave_secreta
+PGSQL_HOST=localhost
+PGSQL_USER=postgres
+PGSQL_PASSWORD=tu_contraseña
+PGSQL_DATABASE=VendeFacil
+```
+
+## Migraciones de Base de Datos
+Para gestionar los cambios en el esquema de tu base de datos, sigue estos pasos:
+1.  Crea los archivos de migración basados en los cambios de tus modelos:
+    ```bash
+    python manage.py makemigrations
+    ```
+2.  Aplica las migraciones para actualizar la base de datos:
+    ```bash
+    python manage.py migrate
+    ```
+
+## Uso
+Para levantar el servidor de desarrollo:
+```bash
+python manage.py runserver
+```
+
+## Ejecutar tests
+```bash
+python manage.py test
+```
+
+## Recopilar archivos estáticos
+```bash
+python manage.py collectstatic
+```
+
+## Licencia
+Este proyecto está licenciado bajo la [MIT License](LICENSE).
 # Vende-Fácil
 
 Vende-Fácil es una aplicación desarrollada para facilitar la conexión entre vendedores de productos agrícolas y compradores de alimentos del campo. Su propósito principal es actuar como intermediaria digital, permitiendo la gestión eficiente de ventas, compras, productos y usuarios dentro del ecosistema agrícola.
@@ -57,22 +122,6 @@ Vende-Fácil maneja distintos tipos de usuarios (**clientes** y **vendedores**),
 
 ## Sistema Operativo
 - **Windows 11**
-
----
-
-## Instalación
-
-### Instalar Django en la terminal
-```bash
-py -m pip install Django==5.2.1
-```
-
-### Generar el archivo `requirements.txt`
-Para mantener un registro de las dependencias del proyecto, puedes generar o actualizar el archivo `requirements.txt` utilizando el siguiente comando:
-```bash
-pip freeze > requirements.txt
-```
-
 ---
 
 ## Conexión a la Base de Datos PostgreSQL
@@ -82,19 +131,6 @@ pip freeze > requirements.txt
 - **Contraseña:** 1234
 - **Base de datos:** VendeFacil
 - **Puerto:** 5432
-
----
-
-## Configuración de Variables de Entorno
-Antes de ejecutar la aplicación, debes crear una carpeta llamada `.env` en la raíz del proyecto. Dentro de esta carpeta, crea un archivo para definir las variables de entorno necesarias para la conexión a la base de datos y la seguridad de la aplicación. Ejemplo de variables que debes agregar:
-
-```env
-SECRET_KEY=tu_clave_secreta
-PGSQL_HOST=localhost
-PGSQL_USER=postgres
-PGSQL_PASSWORD=tu_contraseña
-PGSQL_DATABASE=VendeFacil
-```
 
 ---
 
@@ -116,11 +152,15 @@ Este proyecto utiliza la metodología **Kanban** para la gestión y organizació
 
 ## Arquitectura del Proyecto
 
-El proyecto utiliza una arquitectura **MVC** (Modelo-Vista-Controlador):
+El proyecto sigue la estructura estándar de Django y utiliza una arquitectura **MVC (Modelo-Vista-Controlador)** implícita en el patrón **MTV (Modelo-Plantilla-Vista)** de Django:
 
-- **Modelo (Model):** Gestiona la lógica de datos y la conexión a la base de datos (por ejemplo, archivos como `src/conexion_postgresql.py`).
-- **Vista (View):** Corresponde a la interfaz de usuario, ubicada en la carpeta `templates/` con archivos HTML.
-- **Controlador (Controller):** Maneja la lógica de la aplicación y las rutas, como en `app.py`.
+- **VendeFacil/**: Contiene la configuración principal del proyecto (`settings.py`, `urls.py`, etc.).
+- **Productos/** (y otras apps): Cada aplicación Django gestiona una funcionalidad específica (ej. productos). Contiene:
+    - **models.py (Modelo):** Define la estructura de los datos y la interacción con la base de datos.
+    - **views.py (Vista en MTV, Controlador en MVC):** Maneja la lógica de la aplicación, procesa las solicitudes HTTP y conecta los modelos con las plantillas.
+    - **templates/ (Plantilla):** Archivos HTML que definen la presentación de la interfaz de usuario.
+    - **static/**: Archivos estáticos como CSS, JavaScript e imágenes.
+    - **urls.py**: Define las rutas URL específicas de la aplicación.
 
 Esta arquitectura permite separar responsabilidades, facilitando el mantenimiento y la escalabilidad del proyecto.
 
@@ -160,30 +200,6 @@ Estas funciones son fundamentales para manejar la interacción entre las vistas 
 
 ---
 
-## Crear Migraciones en el Proyecto
-
-Antes de aplicar las migraciones, es necesario crearlas utilizando el siguiente comando:
-
-```bash
-python manage.py makemigrations
-```
-
-Este comando genera los archivos de migración necesarios para reflejar los cambios realizados en los modelos.
-
----
-
-## Migraciones en el Proyecto
-
-Para aplicar las migraciones y sincronizar los modelos con la base de datos, utiliza el siguiente comando en la terminal:
-
-```bash
-python manage.py migrate
-```
-
-Este comando crea las tablas necesarias en la base de datos según los modelos definidos en el proyecto.
-
----
-
 ## Ejemplo de Base de Datos
 
 A continuación, se presenta un ejemplo de script para la creación de tablas en PostgreSQL que se utilizarán en el proyecto:
@@ -218,27 +234,6 @@ CREATE TABLE productos (
 
 ---
 
-## Ejecución del Proyecto
-
-Para iniciar el servidor de desarrollo, utiliza el siguiente comando en la terminal:
-```bash
-python manage.py runserver
-```
-
-Luego, abre tu navegador y accede a la aplicación en la dirección `http://127.0.0.1:8000/`.
-
----
-
-## Pruebas
-
-Para ejecutar las pruebas unitarias del proyecto, utiliza el siguiente comando:
-```bash
-python manage.py test
-```
-Esto ejecutará todas las pruebas definidas en la carpeta `tests.py` de cada aplicación.
-
----
-
 ## Contribución
 
 Si deseas contribuir al proyecto, sigue estos pasos:
@@ -256,17 +251,6 @@ Si deseas contribuir al proyecto, sigue estos pasos:
    git push origin nombre-de-tu-rama
    ```
 5. Abre un pull request en el repositorio original.
-
----
-
-## Arquitectura del Proyecto
-
-El proyecto sigue la estructura estándar de Django. A continuación, se describe brevemente:
-
-- **VendeFacil/**: Contiene la configuración principal del proyecto.
-- **Productos/**: Aplicación que gestiona los productos, con subcarpetas para modelos, vistas, plantillas, y archivos estáticos.
-- **templates/**: Archivos HTML para las vistas.
-- **static/**: Archivos estáticos como CSS, JavaScript e imágenes.
 
 ---
 
