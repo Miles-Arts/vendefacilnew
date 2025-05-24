@@ -23,21 +23,18 @@
             <div class="collapse navbar-collapse " id="navbarNav" >
                 <ul class="navbar-nav ms-auto" >
                     <li class="nav-item">
-                    <a class="nav-link active  text-white" aria-current="page" href="inicio">Inicio</a>
+                    <a class="nav-link active  text-white" aria-current="page" href="{% url 'home' %}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link text-white" href="productos">Productos</a>
-                    </li>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link text-white" href="nosotros">Nosotros</a>
+                    <a class="nav-link text-white" href="{% url 'productos' %}">Productos</a>
                     </li>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link text-white" href="contacto">Contacto</a>
+                    <a class="nav-link text-white" href="{% url 'nosotros' %}">Nosotros</a>
+                    </li>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link text-white" href="disponibles">Disponibles</a>
+                    <a class="nav-link text-white" href="{% url 'contacto' %}">Contacto</a>
                     </li>
                 </ul>
             </div>
