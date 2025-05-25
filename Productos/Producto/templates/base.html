@@ -17,12 +17,16 @@
     <body>
         <nav class="navbar navbar-expand-lg bg-success ">
         <div class="container-fluid ">
-            <a class="navbar-brand text-white" href="#">VendeFacil</a>
+            <img src="{% static 'img/logo.png' %}"
+             alt="Logo VendeFacil"
+             width="50" height="50"
+             class="d-inline-block align-text-top">
+            <a class="navbar-brand text-white fs-4" href="#"> VendeFacil</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse " id="navbarNav" >
-                <ul class="navbar-nav ms-auto" >
+            <div class="collapse navbar-collapse fs-5" id="navbarNav" >
+                <ul class="navbar-nav me-auto" >
                     <li class="nav-item">
                     <a class="nav-link active  text-white" aria-current="page" href="{% url 'prueba' %}">Inicio</a>
                     </li>
@@ -37,7 +41,9 @@
                     <li class="nav-item">
                     <a class="nav-link text-white" href="{% url 'contacto' %}">Contacto</a>
                     </li>
-                    {% if user.is_authenticated %}
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                       {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{% url 'gestionProducto' %}">Dashboard</a>
                         </li>
@@ -53,10 +59,11 @@
                             </form>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{% url 'login' %}">Iniciar Sesión</a>
+                            <a class="nav-link text-white fs-5" href="{% url 'login' %}">Iniciar Sesión</a>
                         </li>
                     {% endif %}
-                </ul>
+                 </ul>
+                
             </div>
         </div>
         </nav>
