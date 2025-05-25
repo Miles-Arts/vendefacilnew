@@ -10,8 +10,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'css/gestionProductos.css' %}">
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">  <!-- Enlace a tu base.css -->
-   
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+       
     </head>
     <body>
         <nav class="navbar navbar-expand-lg bg-success ">
@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse " id="navbarNav" >
                 <ul class="navbar-nav ms-auto" >
                     <li class="nav-item">
-                    <a class="nav-link active  text-white" aria-current="page" href="{% url 'home' %}">Inicio</a>
+                    <a class="nav-link active  text-white" aria-current="page" href="{% url 'prueba' %}">Inicio</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link text-white" href="{% url 'productos' %}">Productos</a>
@@ -36,6 +36,25 @@
                     <li class="nav-item">
                     <a class="nav-link text-white" href="{% url 'contacto' %}">Contacto</a>
                     </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'gestionProducto' %}">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <span class="nav-link text-white">Hola, {{ user.username | title }}</span>
+                        </li>
+                        {% comment %} <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'exit' %}">Cerrar Sesión</a>
+                        </li> {% endcomment %}
+                            <form id="logout-form" method="post" action="{% url 'exit' %}" style="display: inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="nav-link text-white btn btn-link" style="">Cerrar Sesión</button>
+                            </form>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'login' %}">Iniciar Sesión</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

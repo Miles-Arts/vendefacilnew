@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from .models import Producto
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 
 # Create your views here.
 
@@ -84,14 +85,23 @@ def eliminarProducto(request, codigo):
     return redirect('/')
 
 @login_required
+def login(request):
+    return render(request, "login.html")
+
 def inicio(request):
     return render(request, "home.html")
+
+def prueba(request):
+    return render(request, "prueba.html")
 
 def contacto(request):
     return render(request, "contacto.html")
 
 def nosotros(request):
     return render(request, "nosotros.html")
+
+#def gestionProducto(request):
+    #return render(request, "gestionProducto.html")
 
 def productos(request):
     productos = Producto.objects.all()
@@ -100,3 +110,7 @@ def productos(request):
 def disponibles(request):
     productos = Producto.objects.all()
     return render(request, "disponibles.html", {"productos": productos})
+
+def exit(request):
+    logout(request)
+    return redirect('home')
