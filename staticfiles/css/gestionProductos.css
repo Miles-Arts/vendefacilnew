@@ -1,0 +1,17 @@
+.table-responsive {
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden; /* Esto es importante para que el radio funcione bien con la tabla */
+}
+
+.table {
+    border: 1.5px solid #ddd;
+    border-radius: 16px; /* Para navegadores modernos */
+    background: #fff; /* Opcional, para contraste */
+    overflow: hidden;
+}
+
+th, td {
+    text-align: center;
+    vertical-align: middle;
+}

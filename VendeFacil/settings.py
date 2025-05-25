@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -120,11 +121,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+# URL para servir estáticos
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [ BASE_DIR / "static", ]
 
 # Archivos multimedia (fotos de productos)
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+
+# Directorio (fuente) de tus archivos estáticos en desarrollo
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+
+# Directorio (destino) donde collectstatic volcará todos los estáticos
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
