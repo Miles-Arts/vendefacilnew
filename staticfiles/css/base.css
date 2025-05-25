@@ -1,0 +1,54 @@
+.navbar-nav {
+    margin-left: 0 !important;
+}
+
+.container {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    background-image: url("../img/Vendefacil_fondo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+}
+
+body::before {
+    content: "";
+    position: fixed; /* o absolute si prefieres */
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: inherit;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    z-index: -1;
+    filter: blur(8px) brightness(0.8); /* Puedes ajustar el blur y el brillo */
+    pointer-events: none; /* Para que no interfiera con los clics */
+}
+
+.table-responsive{
+    border-radius: 1%;
+}
+
+
+.card {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+}
+

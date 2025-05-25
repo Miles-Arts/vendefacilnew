@@ -1,0 +1,30 @@
+
+
+.container{
+    margin-top: 46px;
+}
+/* .card {
+    margin-right: 10px;
+} */
+.card-img-top {
+    width: 100%;                /* El ancho ocupa todo el contenedor */
+    height: 250px;              /* Fija la altura que desees */
+    object-fit: cover;          /* Recorta la imagen y mantiene la proporción */
+    object-position: center;    /* Centra la imagen recortada */
+    display: block;             /* Elimina espacios extra por inline images */
+    margin-left: auto;          /* Centra horizontalmente si el ancho es menor al contenedor */
+    margin-right: auto;
+}
+
+
+
+.card-footer {
+  margin-top: auto;
+  /* Opcional: para siempre pegarlo al fondo */
+  display: flex;
+  justify-content: flex-start; /* o center o end según lo necesites */
+}
+
+.row .col:not(:last-child) .card {
+    margin-right: 10px;
+}

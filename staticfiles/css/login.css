@@ -1,0 +1,17 @@
+.full-screen-center {
+            min-height: 100vh; /* Asegura que al menos ocupe toda la altura de la pantalla */
+            display: flex;          /* Activa flexbox */
+            justify-content: center;  /* Centra horizontalmente */
+            align-items: center;      /* Centra verticalmente */
+            background-color: #f8f9fa; /* Un color de fondo suave */
+}
+
+  
+.form-label {
+            text-align: center; /* Centra el texto de las etiquetas */
+            display: block;       /* Hace que las etiquetas ocupen todo el ancho */
+}
+
+.form-check {
+            text-align: center; /* Centra el checkbox y la etiqueta "Recordarme" */
+}       
