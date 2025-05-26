@@ -35,7 +35,7 @@ Vende-Fácil maneja distintos tipos de usuarios (**clientes** y **vendedores**),
 - [Ejemplo de Base de Datos](#ejemplo-de-base-de-datos)
 - [Contribución](#contribución)
 - [Recursos Adicionales](#recursos-adicionales)
-- [Versión del Proyecto](#versión-del-proyecto)
+- [Versión del Proyecto](#versión-del-proyecto) 
 - [Autor e Institución](#autor-e-institución)
 - [Licencia](#licencia)
 
@@ -296,6 +296,12 @@ Si deseas contribuir al proyecto, sigue estos pasos:
 ## Versión del Proyecto
 
 Actualmente en la versión **0.0.1** (etapa temprana de desarrollo). Se sigue el esquema de versionado semántico.
+
+---
+
+## Iconos Redes Sociales
+
+https://www.flaticon.es/autores/grow-studio
 
 ---
 
