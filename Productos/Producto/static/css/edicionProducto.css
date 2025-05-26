@@ -1,0 +1,16 @@
+/* Personaliza el botón de <input type="file"> */
+input[type=file]::file-selector-button {
+    content: "Seleccionar foto";
+    background-color: #198754;
+    color: #fff;
+    padding: .375rem .75rem;
+    border: none;
+    border-radius: .25rem;
+    margin-right: .5rem;
+    cursor: pointer;
+}
+
+/* Firefox */
+input[type=file]::file-upload-button {
+    content: "Seleccionar foto";
+}
