@@ -126,12 +126,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [ BASE_DIR / "static", ]
 
 # Archivos multimedia (fotos de productos)
-MEDIA_URL = '/media/'
+MEDIA_URL  = '/media/'
 
 # Directorio (fuente) de tus archivos estáticos en desarrollo
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Directorio (destino) donde collectstatic volcará todos los estáticos
 STATIC_ROOT = BASE_DIR / 'staticfiles'
