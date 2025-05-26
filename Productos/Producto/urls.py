@@ -11,7 +11,7 @@ urlpatterns = [
     #path('logout/', exit, name='exit'),
     
     #Rutas Publicas
-    path('', views.home),
+    path('', views.prueba),
     path('home/', views.home, name='home'),
     path('prueba/', views.prueba, name='prueba'),
     path('contacto/', views.contacto, name='contacto'),

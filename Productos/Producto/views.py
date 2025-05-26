@@ -12,9 +12,12 @@ def home(request):
     messages.success(request, '¡Productos Listados!')
     return render(request, "gestionProducto.html", {"productos":productos})
 
+def inicio(request):
+    return render(request, "prueba.html")
+
 def registrarProducto(request):
     if request.method != 'POST':
-        return redirect('/')
+        return redirect('/home')
     nombre = request.POST['txtNombre']
     peso = request.POST['numPeso']
     caracteristicas = request.POST['txtCaracteristicas']
@@ -23,16 +26,16 @@ def registrarProducto(request):
     # Validaciones
     if not foto:
         messages.error(request, 'Debe subir una imagen.')
-        return redirect('/')
+        return redirect('/home')
     if foto.size > 20 * 1024 * 1024:
         messages.error(request, 'La imagen no debe superar los 20 MB.')
-        return redirect('/')
+        return redirect('/home')
     if foto.content_type not in ['image/jpeg', 'image/png']:
         messages.error(request, 'Solo se permiten imágenes JPG o PNG.')
-        return redirect('/')
+        return redirect('/home')
     if len(caracteristicas) > 300:
         messages.error(request, 'Las características no pueden superar 300 caracteres.')
-        return redirect('/')
+        return redirect('/home')
 
     producto = Producto.objects.create(
         nombre=nombre,
@@ -41,7 +44,7 @@ def registrarProducto(request):
         foto=foto
     )
     messages.success(request, '¡Producto Registrado!')
-    return redirect('/')
+    return redirect('/home')
 
 def edicionProducto(request,codigo):
     producto=Producto.objects.get(codigo=codigo)
@@ -49,7 +52,7 @@ def edicionProducto(request,codigo):
     
 def editarProducto(request):
     if request.method != 'POST':
-        return redirect('/')
+        return redirect('/home')
     codigo = request.POST['txtCodigo']
     nombre = request.POST['txtNombre']
     peso = request.POST['numPeso']
@@ -74,7 +77,7 @@ def editarProducto(request):
         producto.foto = foto
     producto.save()
     messages.success(request, '¡Producto Actualizado!')
-    return redirect('/')
+    return redirect('/home')
 
 def eliminarProducto(request, codigo):
     producto=Producto.objects.get(codigo=codigo)
@@ -82,7 +85,7 @@ def eliminarProducto(request, codigo):
     
     messages.success(request, '¡Producto Eliminado!')
     
-    return redirect('/')
+    return redirect('/home')
 
 @login_required
 def login(request):
