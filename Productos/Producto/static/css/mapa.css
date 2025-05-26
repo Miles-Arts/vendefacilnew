@@ -2,3 +2,13 @@
     margin-top: 56px;
     height: 400px;
 }
+
+.mapa {
+    
+    border-radius: 2px;
+    border: 0.2px solid #ddd;
+    background: #fff; /* Opcional, para contraste */
+    overflow: hidden;
+    
+
+}

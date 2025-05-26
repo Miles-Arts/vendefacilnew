@@ -116,4 +116,4 @@ def disponibles(request):
 
 def exit(request):
     logout(request)
-    return redirect('home')
+    return redirect('productos')
