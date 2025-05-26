@@ -4,6 +4,7 @@
 {% block head %}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="{% static 'css/mapa.css' %}">
+    <link rel="stylesheet" href="{% static 'css/productos.css' %}">
 {% endblock %}
 {% block body %}
 <h2>Contacto</h2>
@@ -19,7 +20,7 @@ Estamos aquí para apoyarte en todo lo relacionado con tu experiencia en Vende F
 Email: contacto@vendefacilapp.com
 <br>
 
-Celular / WhatsApp: +57 300 123 4567
+WhatsApp: +57 300 123 4567
 <br>
 </p>
 <p>
@@ -34,7 +35,7 @@ Twitter
 LinkedIn
 </p>
 <div>
-Horario de atención: Lunes a viernes, 9:00 a.m. – 6:00 p.m.
+Horario de atención: Lunes a viernes, 9:00 a.m. – 4:00 p.m.
 <br>
 ¡Escríbenos y te responderemos en menos de 24 horas!
 <br>
@@ -45,7 +46,7 @@ Horario de atención: Lunes a viernes, 9:00 a.m. – 6:00 p.m.
 <div>
 📍 Ubicación:
 <br>
-Dirección: Calle 123 #45-67, Bogotá, Colombia
+Dirección: Calle 123 #12-12, Tuta, Boyacá.
 <br>
 Mapa:</div>
 <br>
@@ -54,11 +55,12 @@ Vende Fácil App: Tu aliado digital para vender más, sin complicarte.
     <a href="#" class="btn bg-warning btn-primary text-black w-100">Contáctanos</a>
   </div>
 </div>
-    <div id="map" style="height: 418px; width: 100%; border: 1px solid black;"></div>
-<br/>
+    <div class="bottom-0 start-50 translate-middle-x" id="map" style="height: 418px; width: 50%; border: 1px solid black;"></div>  
+<br>
 <small>
-    <a href="https://www.openstreetmap.org/?mlat=5.68617&amp;mlon=-73.23452#map=15/5.68617/-73.23452">Mapa Completo</a>
+    <a href="https://www.openstreetmap.org/?mlat=5.68617 &amp; mlon=-73.23452#map=15/5.68617/-73.23452">Mapa Completo</a>
 </small>
+
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <!-- Tu JS -->
