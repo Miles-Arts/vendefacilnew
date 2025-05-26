@@ -45,21 +45,21 @@
                  <ul class="navbar-nav ms-auto">
                        {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{% url 'gestionProducto' %}">Dashboard</a>
+                            <a class="nav-link text-white fw-bold" href="{% url 'gestionProducto' %}">Panel de Control</a>
                         </li>
                         <li class="nav-item">
-                            <span class="nav-link text-white">Hola, {{ user.username | title }}</span>
+                            <span class="nav-link text-white fst-italic">Hola, {{ user.username | title }}</span>
                         </li>
                         {% comment %} <li class="nav-item">
                             <a class="nav-link text-white" href="{% url 'exit' %}">Cerrar Sesión</a>
                         </li> {% endcomment %}
                             <form id="logout-form" method="post" action="{% url 'exit' %}" style="display: inline;">
                                 {% csrf_token %}
-                                <button type="submit" class="nav-link text-white btn btn-link" style="">Cerrar Sesión</button>
+                                <button type="submit" class="nav-link text-white btn btn-link" style=""> Cerrar Sesión</button>
                             </form>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link text-white fs-5" href="{% url 'login' %}">Iniciar Sesión</a>
+                            <a class="nav-link text-white fs-5 fw-bold" href="{% url 'login' %}"> Iniciar Sesión 🟡🟠</a>
                         </li>
                     {% endif %}
                  </ul>
