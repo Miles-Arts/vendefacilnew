@@ -4,6 +4,7 @@ from .models import Producto
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from .forms import CustomUserCreationFor
 
 # Create your views here.
 
@@ -117,3 +118,9 @@ def disponibles(request):
 def exit(request):
     logout(request)
     return redirect('productos')
+
+def register(request):
+    data = { 
+            'form':CustomUserCreationFor()
+    }
+    return render(request, 'registration/register.html',data)
