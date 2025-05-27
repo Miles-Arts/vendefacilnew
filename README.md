@@ -31,7 +31,8 @@ Vende-Fácil maneja distintos tipos de usuarios (**clientes** y **vendedores**),
 - [Arquitectura del Proyecto](#arquitectura-del-proyecto)
 - [ORM (Object Relational Mapping)](#orm-object-relational-mapping)
 - [Patrón de Arquitectura MTV (Modelo-Plantilla-Vista)](#patrón-de-arquitectura-mtv-modelo-plantilla-vista)
-- [Importar Funciones Esenciales en las Vistas](#importar-funciones-esenciales-en-las-vistas)
+- [Importar Funciones Esenciales en las Vistas](#importar-funciones-esenciales-en-las-vistas) ## Bootstrap5 template pack para django-crispy-forms
+- [Bootstrap5 template pack para django-crispy-forms](#Bootstrap5-template-pack-para-django-crispy-forms)
 - [Ejemplo de Base de Datos](#ejemplo-de-base-de-datos)
 - [Contribución](#contribución)
 - [Recursos Adicionales](#recursos-adicionales)
@@ -231,6 +232,35 @@ Estas funciones son fundamentales para manejar la interacción entre las vistas 
 
 ---
 
+## Bootstrap5 template pack para django-crispy-forms
+
+### Instalación
+
+Instala este plugin usando pip:
+
+```bash
+$ pip install crispy-bootstrap5
+```
+
+### Uso
+
+Debes actualizar el archivo de configuración (`settings.py`) de tu proyecto para agregar `crispy_forms` y `crispy_bootstrap5` a `INSTALLED_APPS`. También debes establecer `bootstrap5` como un template pack permitido y como el template pack por defecto para tu proyecto:
+
+```python
+INSTALLED_APPS = (
+    ...
+    "crispy_forms",
+    "crispy_bootstrap5",
+    ...
+)
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+```
+
+---
+
 ## Ejemplo de Base de Datos
 
 A continuación, se presenta un ejemplo de script para la creación de tablas en PostgreSQL que se utilizarán en el proyecto:
@@ -319,3 +349,32 @@ https://www.flaticon.es/autores/grow-studio
 Este proyecto está licenciado bajo la **Licencia MIT**.
 
 © 2025 Milton Figueredo
+
+---
+
+## Bootstrap5 template pack para django-crispy-forms
+
+### Instalación
+
+Instala este plugin usando pip:
+
+```bash
+$ pip install crispy-bootstrap5
+```
+
+### Uso
+
+Debes actualizar el archivo de configuración (`settings.py`) de tu proyecto para agregar `crispy_forms` y `crispy_bootstrap5` a `INSTALLED_APPS`. También debes establecer `bootstrap5` como un template pack permitido y como el template pack por defecto para tu proyecto:
+
+```python
+INSTALLED_APPS = (
+    ...
+    "crispy_forms",
+    "crispy_bootstrap5",
+    ...
+)
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+```
