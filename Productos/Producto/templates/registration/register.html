@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% load static %}
-{% block title %} Iniciar Sesión {% endblock %}
+{% block title %} Registro de Usuario {% endblock %}
 
 {% block head %}
     {{ block.super }}
@@ -46,13 +46,13 @@
                             </div>-->
                            
                             <div class="card-body">
-                                <h5 class="card-title">Ingrese sus datos</h5>
+                                <h5 class="card-title">Complete los campos</h5>
                                  {{ form | crispy }}
 
                                 <a href="{% url 'prueba' %}" class="card-link mb-3">Inicio</a>
-                                <a href="#" class="card-link">Registrarse</a>
+                                <a href="{% url 'login' %}" class="card-link">Iniciar Sesión</a>
 
-                                <button type="submit" class="btn bg-warning btn-primary text-black w-100 mt-3">Iniciar Sesión</button>
+                                <button  type="submit" class="btn bg-warning btn-primary text-black w-100 mt-3">Registrase</button>
 
                             </div>
                             </div>
