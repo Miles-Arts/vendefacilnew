@@ -337,7 +337,7 @@ https://www.flaticon.es/autores/grow-studio
 
 ## Autor e Institución
 
-- **Autor:** Milton Figueredo ([LinkedIn](#) | [GitHub](#))
+- **Autor:** Milton Figueredo ([LinkedIn](https://www.linkedin.com/in/milton-figueredo-miles-arts/) | [GitHub](https://github.com/Miles-Arts))
 - **Institución:** SENA - Servicio Nacional de Aprendizaje
 - **Programa:** Tecnólogo en Análisis y Desarrollo de Software
 - **Fecha:** Mayo 2025
@@ -351,30 +351,3 @@ Este proyecto está licenciado bajo la **Licencia MIT**.
 © 2025 Milton Figueredo
 
 ---
-
-## Bootstrap5 template pack para django-crispy-forms
-
-### Instalación
-
-Instala este plugin usando pip:
-
-```bash
-$ pip install crispy-bootstrap5
-```
-
-### Uso
-
-Debes actualizar el archivo de configuración (`settings.py`) de tu proyecto para agregar `crispy_forms` y `crispy_bootstrap5` a `INSTALLED_APPS`. También debes establecer `bootstrap5` como un template pack permitido y como el template pack por defecto para tu proyecto:
-
-```python
-INSTALLED_APPS = (
-    ...
-    "crispy_forms",
-    "crispy_bootstrap5",
-    ...
-)
-
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-
-CRISPY_TEMPLATE_PACK = "bootstrap5"
-```
