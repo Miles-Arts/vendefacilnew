@@ -12,71 +12,58 @@
 <div class="card w-50 ">
   <div class="card-body">
     <h5 class="card-title">¡Contáctanos!</h5>
-    <p class="card-text">
-Estamos aquí para apoyarte en todo lo relacionado con tu experiencia en Vende Fácil App.<br>
-<p>
-📱 Información directa
-<br>
-Email: contacto@vendefacilapp.com
-<br>
-</p>
-  <p>
-    <img src="{% static 'img/regate.png' %}"
-             alt="Logo VendeFacil"
-             width="30" height="30"
-             class="d-inline-block align-text-top"> Redes Sociales
-</p>
-<div class="redes-sociales-horizontal">
-
-<br>
- <a href="https://www.gmail.com" target="_blank" class="d-flex align-items-center mb-2 text-decoration-none">
-        <img src="{% static 'img/email.png' %}" width="30" height="30" class="me-2">
-        Email VendeFacil
-      </a><br>
- <a href="https://www.instagram.com" target="_blank" class="d-flex align-items-center mb-2 text-decoration-none">
-        <img src="{% static 'img/instagram.png' %}" width="30" height="30" class="me-2">
-        Instagram
-      </a><br>
-      <a href="https://www.youtube.com" target="_blank" class="d-flex align-items-center mb-2 text-decoration-none">
-        <img src="{% static 'img/youtube.png' %}" width="30" height="30" class="me-2">
-        YouTube
-      </a><br>
-      <a href="https://www.linkedin.com" target="_blank" class="d-flex align-items-center mb-2 text-decoration-none">
-        <img src="{% static 'img/linkedin.png' %}" width="30" height="30" class="me-2">
-        LinkedIn
-      </a><br>
-      <a href="https://wa.me/573192740829" target="_blank" class="d-flex align-items-center text-decoration-none">
-        <img src="{% static 'img/whatsapp.png' %}" width="30" height="30" class="me-2">
-        WhatsApp
-      </a></p>
-</div>
-<div>
-Horario de atención: Lunes a viernes, 9:00 a.m. – 4:00 p.m.
-<br>
-¡Escríbenos y te responderemos en menos de 24 horas!
-<br>
-</div>
-<br>
-<div>
-📍 Ubicación:
-<br>
-Dirección: Calle 123 #12-12, Tuta, Boyacá.
-<br>
-Mapa:</div>
-<br>
-Vende Fácil App: Tu aliado digital para vender más, sin complicarte.
-</p>
-    <a href="#" class=" btn bg-warning btn-primary text-black w-100">Contáctanos</a>
+    <div class="card-text">
+      <span class="intro">
+    Estamos aquí para apoyarte en todo lo relacionado con tu experiencia en Vende Fácil App.
+    </span> <strong>📱 Información directa</strong><br>
+      Email: contacto@vendefacilapp.com
+      <br><br>
+      <strong>Redes Sociales</strong>
+      <div class="redes-sociales-horizontal">
+        <a href="https://www.gmail.com" target="_blank" class="d-flex align-items-center text-decoration-none">
+            <img src="{% static 'img/email.png' %}" width="30" height="30" class="me-2">
+            Email VendeFacil
+        </a>
+        <a href="https://www.instagram.com" target="_blank" class="d-flex align-items-center text-decoration-none">
+            <img src="{% static 'img/instagram.png' %}" width="30" height="30" class="me-2">
+            Instagram
+        </a>
+        <a href="https://www.youtube.com" target="_blank" class="d-flex align-items-center text-decoration-none">
+            <img src="{% static 'img/youtube.png' %}" width="30" height="30" class="me-2">
+            YouTube
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" class="d-flex align-items-center text-decoration-none">
+            <img src="{% static 'img/linkedin.png' %}" width="30" height="30" class="me-2">
+            LinkedIn
+        </a>
+        <a href="https://wa.me/573192740829" target="_blank" class="d-flex align-items-center text-decoration-none">
+            <img src="{% static 'img/whatsapp.png' %}" width="30" height="30" class="me-2">
+            WhatsApp
+        </a>
+      </div>
+      <div>
+        Horario de atención: Lunes a viernes, 9:00 a.m. – 4:00 p.m.<br>
+        ¡Escríbenos y te responderemos en menos de 24 horas!
+      </div>
+      <br>
+      <div>
+        📍 Ubicación:<br>
+        Dirección: Calle 123 #12-12, Tuta, Boyacá.
+      </div>
+      <br>
+    <span class="vende-facil-app">
+      <strong>Vende Fácil App:</strong> Tu aliado digital para vender más, sin complicarte.
+     </span> </div>
+    <a href="#" class="btn bg-warning btn-primary text-black w-100">Contáctanos</a>
   </div>
 </div>
-    <div class=" bottom-0 start-50 translate-middle-x" id="map" style="height: 418px; width: 50%; border: 1px solid black; border-radius: 6px;"></div>  
+<div class="bottom-0 start-50 translate-middle-x" id="map" style="height: 418px; width: 50%; border: 1px solid black; border-radius: 6px;"></div>  
 <br>
 <small>
-    <a  href="https://www.openstreetmap.org/?mlat=5.68617 &amp; mlon=-73.23452#map=15/5.68617/-73.23452">Mapa Completo</a>
+    <a href="https://www.openstreetmap.org/?mlat=5.68617&amp;mlon=-73.23452#map=15/5.68617/-73.23452">Mapa Completo</a>
 </small>
-
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-    <!-- Tu JS -->
-    <script src="{% static 'js/mapa.js' %}"></script>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<!-- Tu JS -->
+<script src="{% static 'js/mapa.js' %}"></script>
 {% endblock %}
