@@ -1,14 +1,18 @@
 .redes-sociales-horizontal {
     display: flex;
     flex-direction: row;
-    gap: 20px; /* Espacio entre los enlaces */
+    gap: 20px;
     align-items: center;
     margin-bottom: 16px;
-    flex-wrap: wrap; /* Opcional: para que se acomoden en varias líneas en pantallas pequeñas */
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto; /* Opcional: agrega scroll si hay demasiados enlaces */
 }
 
 .redes-sociales-horizontal a {
-    margin-bottom: 0 !important; /* Quita el margen inferior de los enlaces */
+    margin-bottom: 0 !important;
+    white-space: nowrap; /* Evita que el texto se parta en varias líneas */
 }
 
 .container{
@@ -18,7 +22,15 @@
     margin-right: 10px;
 } */
 
+.card-text > span.intro {
+    display: block;
+    margin-bottom: 18px; /* Ajusta el valor según lo que necesites */
+}
 
+.card-text > .vende-facil-app {
+    display: block;
+    margin-bottom: 18px; /* Ajusta el valor según lo que necesites */
+}
 
 .card-img-top {
     width: 100%;                /* El ancho ocupa todo el contenedor */
