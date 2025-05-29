@@ -3,6 +3,7 @@
 {% block title %} Contacto {% endblock %}
 {% block head %}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="{% static 'css/contacto.css' %}">
     <link rel="stylesheet" href="{% static 'css/mapa.css' %}">
     <link rel="stylesheet" href="{% static 'css/productos.css' %}">
 {% endblock %}
@@ -18,15 +19,15 @@ Estamos aquí para apoyarte en todo lo relacionado con tu experiencia en Vende F
 <br>
 Email: contacto@vendefacilapp.com
 <br>
-<br>
 </p>
-<p>
-<p>
+  <p>
     <img src="{% static 'img/regate.png' %}"
              alt="Logo VendeFacil"
              width="30" height="30"
              class="d-inline-block align-text-top"> Redes Sociales
 </p>
+<div class="redes-sociales-horizontal">
+
 <br>
  <a href="https://www.gmail.com" target="_blank" class="d-flex align-items-center mb-2 text-decoration-none">
         <img src="{% static 'img/email.png' %}" width="30" height="30" class="me-2">
@@ -48,12 +49,11 @@ Email: contacto@vendefacilapp.com
         <img src="{% static 'img/whatsapp.png' %}" width="30" height="30" class="me-2">
         WhatsApp
       </a></p>
+</div>
 <div>
 Horario de atención: Lunes a viernes, 9:00 a.m. – 4:00 p.m.
 <br>
 ¡Escríbenos y te responderemos en menos de 24 horas!
-<br>
-“¿Tienes preguntas frecuentes? Mira nuestra sección de ayuda aquí.”
 <br>
 </div>
 <br>

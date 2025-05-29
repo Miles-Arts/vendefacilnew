@@ -1,0 +1,59 @@
+.redes-sociales-horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Espacio entre los enlaces */
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap; /* Opcional: para que se acomoden en varias líneas en pantallas pequeñas */
+}
+
+.redes-sociales-horizontal a {
+    margin-bottom: 0 !important; /* Quita el margen inferior de los enlaces */
+}
+
+.container{
+    margin-top: 46px;
+}
+/* .card {
+    margin-right: 10px;
+} */
+
+
+
+.card-img-top {
+    width: 100%;                /* El ancho ocupa todo el contenedor */
+    height: 250px;              /* Fija la altura que desees */
+    object-fit: cover;          /* Recorta la imagen y mantiene la proporción */
+    object-position: center;    /* Centra la imagen recortada */
+    display: block;             /* Elimina espacios extra por inline images */
+    margin-left: auto;          /* Centra horizontalmente si el ancho es menor al contenedor */
+    margin-right: auto;
+}
+
+.card-footer {
+  margin-top: auto;
+  /* Opcional: para siempre pegarlo al fondo */
+  display: flex;
+  justify-content: flex-start; /* o center o end según lo necesites */
+}
+
+.row .col:not(:last-child) .card {
+    margin-right: 10px;
+}
+
+@media (max-width: 575.98px) {
+  .card-body {
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .card-body {
+    max-width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
