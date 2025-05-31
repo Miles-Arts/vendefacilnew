@@ -29,10 +29,11 @@
 }
 
 @media (max-width: 575.98px) {
-  .card-body {
-    max-width: 350px;
-    margin-left: auto;
-    margin-right: auto;
+  /* Sobrescribimos w-50 sólo en <576px */
+  .card.w-50 {
+    width: 95% !important;
+    max-width: 95vw !important;
+    margin: 0 auto !important;
   }
 }
 
@@ -43,4 +44,6 @@
     margin-right: auto;
   }
 }
+
+
 
