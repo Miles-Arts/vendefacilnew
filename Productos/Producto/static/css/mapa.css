@@ -1,14 +1,21 @@
 #map {
     margin-top: 56px;
     height: 400px;
-}
-
-.mapa {
     
     border-radius: 2px;
     border: 0.2px solid #ddd;
     background: #fff; /* Opcional, para contraste */
     overflow: hidden;
-    
+    padding-right: 50%;
+    padding-left: 50%;
+}
 
+
+/* NUEVO: en móviles ajustamos el ancho del mapa */
+@media (max-width: 575.98px) {
+  #map {
+    width: 95% !important;
+    max-width: 95vw !important;
+    margin: 0 auto !important;
+  }
 }
