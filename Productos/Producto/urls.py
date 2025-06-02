@@ -31,8 +31,9 @@ urlpatterns = [
     #path('home/eliminarProducto/<codigo>', views.eliminarProducto),
     
     path('productos/registrarProducto/', views.registrarProducto, name='registrarProducto'),
+    path('edicionProducto/<str:codigo>/', views.edicionProducto, name='edicionProducto'),
     path('editarProducto/', views.registrarProducto, name='gestionProducto'),
-    path('edicionProducto/<str:codigo>/', views.edicionProducto, name='edicionProducto'), # Asegúrate que el tipo de 'codigo' coincida con tu modelo
+     # Asegúrate que el tipo de 'codigo' coincida con tu modelo
     #path('gestionProducto/', views.editarProducto, name='edicionProducto'),
     path('eliminarProducto/<str:codigo>/', views.eliminarProducto, name='eliminarProducto'), # Asegúrate que el tipo de 'codigo' coincida
     

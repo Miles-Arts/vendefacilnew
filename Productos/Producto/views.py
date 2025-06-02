@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from .models import Producto
 from django.contrib import messages
@@ -46,11 +46,31 @@ def registrarProducto(request):
         foto=foto
     )
     messages.success(request, '¡Producto Registrado!')
-    return redirect('/home')
+    return redirect('home')
+    #return redirect(request, "gestionProducto.html", {"producto":producto})
+    #return render(request, "edicionProducto.html", {"producto":producto})
 
-def edicionProducto(request,codigo):
-    producto=Producto.objects.get(codigo=codigo)
-    return render(request, "edicionProducto.html", {"producto":producto})
+# def edicionProducto(request,codigo):
+#     producto=Producto.objects.get(codigo=codigo)
+#     return render(request, "edicionProducto.html", {"producto":producto})
+    
+def edicionProducto(request, codigo):
+    producto = get_object_or_404(Producto, codigo=codigo)
+    if request.method == 'POST':
+        # 1) Actualizar campos
+        producto.nombre = request.POST.get('txtNombre', producto.nombre)
+        producto.peso = request.POST.get('numPeso', producto.peso)
+        producto.caracteristicas = request.POST.get('txtCaracteristicas', producto.caracteristicas)
+        # 2) Si subieron foto, reemplazarla
+        nueva_foto = request.FILES.get('foto')
+        if nueva_foto:
+            producto.foto = nueva_foto
+        # 3) Guardar y redirigir
+        producto.save()
+        messages.success(request, '¡Producto actualizado correctamente!')
+        return redirect('home')
+    # GET: Mostrar formulario
+    return render(request, 'edicionProducto.html', {'producto': producto})    
     
 def editarProducto(request):
     if request.method != 'POST':
