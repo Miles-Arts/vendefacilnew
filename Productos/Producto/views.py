@@ -23,6 +23,8 @@ def registrarProducto(request):
     nombre = request.POST['txtNombre']
     peso = request.POST['numPeso']
     caracteristicas = request.POST['txtCaracteristicas']
+    # Nuevo campo precio
+    precio = request.POST.get('txtPrecio', '0')
     foto = request.FILES.get('foto')
 
     # Validaciones
@@ -43,7 +45,8 @@ def registrarProducto(request):
         nombre=nombre,
         peso=peso,
         caracteristicas=caracteristicas,
-        foto=foto
+        foto=foto,
+        precio=precio
     )
     messages.success(request, '¡Producto Registrado!')
     return redirect('home')
@@ -61,6 +64,13 @@ def edicionProducto(request, codigo):
         producto.nombre = request.POST.get('txtNombre', producto.nombre)
         producto.peso = request.POST.get('numPeso', producto.peso)
         producto.caracteristicas = request.POST.get('txtCaracteristicas', producto.caracteristicas)
+        # Actualizar precio solo si se proporciona un valor
+        price_str = request.POST.get('txtPrecio', '').strip()
+        if price_str:
+            try:
+                producto.precio = price_str
+            except (ValueError, TypeError):
+                pass
         # 2) Si subieron foto, reemplazarla
         nueva_foto = request.FILES.get('foto')
         if nueva_foto:
@@ -79,6 +89,9 @@ def editarProducto(request):
     nombre = request.POST['txtNombre']
     peso = request.POST['numPeso']
     caracteristicas = request.POST.get('txtCaracteristicas', '')
+    # Nuevo campo precio
+    precio = request.POST.get('txtPrecio', None)
+    #precio = request.POST['txtPrecio']
     foto = request.FILES.get('foto')
 
     producto = Producto.objects.get(codigo=codigo)
@@ -89,6 +102,14 @@ def editarProducto(request):
             messages.error(request, 'Las características no pueden superar 300 caracteres.')
             return redirect(f'/edicionProducto/{codigo}')
         producto.caracteristicas = caracteristicas
+    # Actualizar precio solo si se proporciona un valor válido
+    price_str = request.POST.get('txtPrecio', '').strip()
+    if price_str:
+        try:
+            producto.precio = price_str
+        except (ValueError, TypeError):
+            pass
+    # Procesar foto si fue actualizada
     if foto:
         if foto.size > 20 * 1024 * 1024:
             messages.error(request, 'La imagen no debe superar los 20 MB.')

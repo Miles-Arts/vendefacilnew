@@ -21,7 +21,8 @@
             <p class="card-text mb-1"><strong>Código:</strong> {{ producto.codigo }}</p>
             <p class="card-text mb-2"><strong>Peso:</strong> {{ producto.peso }}</p>
             <p class="card-text mb-2"><strong>Características:</strong> {{ producto.caracteristicas|truncatechars:15 }}</p>
-              <a href="https://www.whatsapp.com/" target="_blank" class="btn bg-warning btn-primary text-black w-100">Comprar</a>
+            <p class="card-text mb-2"><strong>Precio:</strong> ${{ producto.precio }}</p>
+            <a href="https://www.whatsapp.com/" target="_blank" class="btn bg-warning btn-primary text-black w-100">Comprar</a>
           </div>
         </div>
       </div>

@@ -20,7 +20,10 @@
             <input type="text" id="txtNombre" name="txtNombre" value="{{producto.nombre}}" class="form-control" placeholder="Nombre" max="50" required />
           </div>
           <div class="form-group mb-3">
-            <input type="text" id="numPeso" name="numPeso" value="{{producto.peso}}" class="form-control" placeholder="Peso/Litros" min="1" max="10" required />
+            <input type="number" step="0.01" id="numPeso" name="numPeso" value="{{producto.peso}}" class="form-control" placeholder="Peso/Litros" min="1" max="100000" required />
+          </div>
+          <div class="form-group mb-3">
+            <input type="number" step="0.01" id="txtPrecio" name="txtPrecio" value="{{producto.precio}}" class="form-control" placeholder="Precio" min="0" required />
           </div>
           <div class="form-group mb-3">
             <label for="txtCaracteristicas">Características</label>
