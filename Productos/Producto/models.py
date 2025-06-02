@@ -12,7 +12,7 @@ class Producto(models.Model):
     precio = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     
     def __str__(self):
-        texto = "{0} ({1})"
-        return texto.format(self.nombre, self.peso)
+        texto = "{0} ({1}) ({2})"
+        return texto.format(self.nombre, self.peso, self.precio)
 
 
