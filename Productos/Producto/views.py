@@ -15,7 +15,7 @@ def home(request):
     return render(request, "gestionProducto.html", {"productos":productos})
 
 def inicio(request):
-    return render(request, "prueba.html")
+    return render(request, "inicio.html")
 
 def registrarProducto(request):
     if request.method != 'POST':
@@ -93,11 +93,11 @@ def eliminarProducto(request, codigo):
 def login(request):
     return render(request, "login.html")
 
-def inicio(request):
+def inicios(request):
     return render(request, "home.html")
 
-def prueba(request):
-    return render(request, "prueba.html")
+def inicio(request):
+    return render(request, "inicio.html")
 
 def contacto(request):
     return render(request, "contacto.html")
