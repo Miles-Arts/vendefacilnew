@@ -17,9 +17,9 @@ urlpatterns = [
     #path('logout/', exit, name='exit'),
     
     #Rutas Publicas
-    path('', views.prueba),
+    path('', views.inicio),
     path('home/', views.home, name='home'),
-    path('prueba/', views.prueba, name='prueba'),
+    path('inicio/', views.inicio, name='inicio'),
     path('contacto/', views.contacto, name='contacto'),
     path('nosotros/', views.nosotros, name='nosotros'),
     path('productos/', views.productos, name='productos'),
