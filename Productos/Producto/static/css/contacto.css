@@ -65,12 +65,18 @@
     max-width: 95vw !important;
     margin: 0 auto !important;
   }
+
+   .container {
+        padding-bottom: 180px !important;
+    }
   /* Ensure embedded map is full-width on small screens */
   #map {
     width: 95% !important;
     max-width: 95vw !important;
     margin: 0 auto !important;
   }
+
+  
 }
 
 

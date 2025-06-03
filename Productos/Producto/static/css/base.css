@@ -52,3 +52,9 @@ footer {
     z-index: 100;
 }
 
+@media (max-width: 575.98px) {
+    .container {
+        padding-bottom: 180px !important;
+    }
+}
+
