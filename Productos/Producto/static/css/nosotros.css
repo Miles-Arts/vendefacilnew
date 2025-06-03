@@ -5,4 +5,8 @@
     max-width: 95vw !important;
     margin: 0 auto !important;
   }
+
+  .container {
+        padding-bottom: 180px !important;
+  }
 }
